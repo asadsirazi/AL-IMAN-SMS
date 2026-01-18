@@ -1,0 +1,5 @@
+{
+  "name": "AL-IMAN Student Management System",
+  "description": "A high-performance Enterprise Student Management System for Google Apps Script, featuring multi-section admissions, academic history tracking, and student migration with a modern dashboard UI.",
+  "requestFramePermissions": []
+}
