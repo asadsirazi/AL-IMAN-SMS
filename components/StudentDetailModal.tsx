@@ -78,7 +78,8 @@ const StudentDetailModal: React.FC<Props> = ({ student, mode, onClose }) => {
     return (
       <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm no-print overflow-y-auto">
         <div className="absolute inset-0" onClick={onClose}></div>
-        <div className="relative bg-white w-full max-w-[900px] max-h-[95vh] overflow-y-auto rounded-[2rem] shadow-2xl animate-fade-in print:overflow-visible print:shadow-none print:rounded-none">
+        {/* Fixed width container for non-responsive layout */}
+        <div className="relative bg-white w-[850px] min-w-[850px] max-h-[95vh] overflow-y-auto rounded-[2rem] shadow-2xl animate-fade-in print:overflow-visible print:shadow-none print:rounded-none overflow-x-auto">
           
           <div className="sticky top-0 bg-white/95 backdrop-blur-md px-8 py-4 border-b border-slate-100 flex items-center justify-between z-20 no-print">
             <div className="flex items-center gap-3">
@@ -97,7 +98,7 @@ const StudentDetailModal: React.FC<Props> = ({ student, mode, onClose }) => {
           </div>
 
           <div className="w-full bg-white p-12 print:p-0 font-bn">
-             {/* Header */}
+             {/* Header - Fixed Layout */}
              <div className="border-b-4 border-slate-900 pb-4 mb-8 flex items-start justify-between">
                 <div className="flex gap-6">
                    <div className="w-20 h-20 shrink-0">
@@ -120,7 +121,7 @@ const StudentDetailModal: React.FC<Props> = ({ student, mode, onClose }) => {
 
              <div className="flex gap-8 mb-8">
                 <div className="flex-1 space-y-6">
-                   {/* Personal Info */}
+                   {/* Personal Info - Fixed Row layout */}
                    <div className="border border-slate-300 rounded-lg overflow-hidden shadow-sm">
                       <div className="bg-slate-900 text-white px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.2em]">১. শিক্ষার্থীর ব্যক্তিগত পরিচিতি</div>
                       <DataRow labelBN="নাম (বাংলায়)" value={student.Name_Bangla} isLarge />
@@ -168,7 +169,7 @@ const StudentDetailModal: React.FC<Props> = ({ student, mode, onClose }) => {
                 </div>
              </div>
 
-             {/* Address & Contact */}
+             {/* Address & Contact - Fixed Grid */}
              <div className="border border-slate-300 rounded-lg overflow-hidden shadow-sm mb-8">
                 <div className="bg-slate-900 text-white px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.2em]">৩. যোগাযোগ ও স্থায়ী ঠিকানা</div>
                 <div className="grid grid-cols-2 divide-x divide-slate-300">
@@ -185,7 +186,7 @@ const StudentDetailModal: React.FC<Props> = ({ student, mode, onClose }) => {
                 </div>
              </div>
 
-             {/* System Audit */}
+             {/* System Audit - Fixed Grid */}
              <div className="grid grid-cols-3 gap-6 mb-20">
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-center">
                    <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">প্রোফাইল তৈরির তারিখ</p>
@@ -223,7 +224,7 @@ const StudentDetailModal: React.FC<Props> = ({ student, mode, onClose }) => {
     );
   }
 
-  // Sweet Dashboard View (Web)
+  // Sweet Dashboard View (Web/Responsive remains here as it's for app interaction)
   const SweetItem = ({ label, value, icon: Icon, color = "blue", fieldName }: any) => (
     <div className={`p-4 rounded-[1.5rem] border border-${color}-100 bg-white shadow-sm flex items-center gap-4 group hover:border-${color}-300 hover:shadow-md transition-all`}>
       <div className={`w-10 h-10 rounded-xl bg-${color}-50 flex items-center justify-center text-${color}-600 shrink-0`}>
