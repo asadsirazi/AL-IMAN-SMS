@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://al-iman-sms.vercel.app/sitemap.xml
